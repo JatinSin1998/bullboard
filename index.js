@@ -13,12 +13,11 @@ const { ExpressAdapter } = require("@bull-board/express");
     redis: {
       host: process.env.REDIS_HOST,
       port: process.env.REDIS_PORT,
-      password: process.env.REDIS_PASSWORD, // if no password, omit this field
     },
   };
 
   // Create a new queue with the Redis connection options
-  const queuesList = ["burger"];
+  const queuesList = ["crawlQueue"];
 
   const serverAdapter = new ExpressAdapter();
   serverAdapter.setBasePath("/admin/queues");
